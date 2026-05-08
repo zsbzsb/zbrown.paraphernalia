@@ -63,7 +63,7 @@ This plugin is intended for interactive terminal usage. It generally should not 
 
 `interactive_shell` assumes it is running as an Ansible worker process whose parent process is the `ansible-playbook` process running inside an interactive terminal.
 
-It uses the parent process file descriptors:
+It uses the parent process's file descriptors:
 
 ```text
 0 = stdin
@@ -71,12 +71,12 @@ It uses the parent process file descriptors:
 2 = stderr
 ```
 
-The plugin then:
+The plugin does the following:
 
-1. Opens the parent `ansible-playbook` process's terminal file descriptors.
+1. Opens the parent process's file descriptors for use as stdio pipes.
 2. Pipes the terminal stdin directly to the child shell process.
 3. Captures the child process stdout and stderr.
-4. Tees stdout and stderr back to the terminal so output is displayed live while still being available in the task result.
+4. Tees stdout and stderr back to the terminal's stdout/stderr so output is displayed live while also capturing it to be available in the task result.
 
 This allows the child command to behave like an interactive shell command while still returning normal Ansible result values such as `rc`, `stdout`, `stderr`, `stdout_lines`, `stderr_lines`, `changed`, `failed`, `start`, `end`, and `delta`.
 
