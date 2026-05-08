@@ -1,0 +1,19 @@
+namespace: zbrown
+name: paraphernalia
+version: 0.1.0
+readme: README.md
+authors:
+  - Zachariah Brown
+description: Various Ansible plugins and utilities including interactive_shell
+license:
+  - GPL-3.0-or-later
+
+tags:
+  - tools
+  - shell
+  - utilities
+
+dependencies: {}
+
+repository: https://github.com/zsbzsb/zbrown.paraphernalia
+issues: https://github.com/zsbzsb/zbrown.paraphernalia/issues
