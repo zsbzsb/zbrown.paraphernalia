@@ -23,7 +23,7 @@ ansible-galaxy collection install -r requirements.yml
 # Compatibility
 
 - Ansible 2.19 tested - but it should work on older Ansible versions as well
-- `interactive_shell` is requires a Linux or WSL controller host
+- `interactive_shell` requires a Linux/WSL controller host
 
 # Plugins
 
